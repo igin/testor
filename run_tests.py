@@ -13,5 +13,5 @@ for solution_dir in solution_dirs:
     new_env["PYTHONPATH"] = f"{solution_abs_path}:{original_pythonpath}"
 
     retcode = subprocess.call(
-        ["pytest", "-q", "--tb=no", "teacher_tests"], env=new_env)
+        ["pytest", "-q", "--no-summary", "--tb=no", "teacher_tests"], env=new_env)
     print(f"Done running tests for {solution_dir}")
